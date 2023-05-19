@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import static project.utilities.Constants.*;
 
 public class Utils {
+
+    //Checks if the user has entered 0 to go to main menu
     public static boolean isMainInput(int inputNumber) {
         if (inputNumber == 0) {
             return true;
@@ -15,6 +17,7 @@ public class Utils {
         return false;
     }
 
+    //checks if the song has mp3 extension
     public static boolean isValidSong(String songFileName) {
 
         String[] songFileStr = songFileName.split("\\.");
@@ -25,9 +28,10 @@ public class Utils {
         return false;
     }
 
+    //Play the selected music in default music player and open the given image (if provided)
     public static boolean PlayMusic(SongData songData) {
-        String musicFilePath = "./assets/songs/" + songData.getSongFile();  // Replace with the actual path to your music file
-        String imageFilePath = "./assets/albums/" + songData.getImage();  // Replace with the actual path to your music file
+        String musicFilePath = "./assets/songs/" + songData.getSongFile();
+        String imageFilePath = "./assets/albums/" + songData.getImage();
         String defaultImageFilePath = "./assets/no-picture.png";
 
         File musicFile = new File(musicFilePath);
@@ -54,6 +58,7 @@ public class Utils {
         }
     }
 
+    //Filter all songs according to selected album or genre or artist (filter type)
     public static ArrayList<SongData> FilterSongs(ArrayList<SongData> allSongsList, String filterString, String filterType) {
         ArrayList<SongData> filteredArrayList = new ArrayList<>();
         for (int j = 0; j < allSongsList.size(); j++) {
