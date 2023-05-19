@@ -52,7 +52,7 @@ public class ProjectView {
     }
 
     public void showEnterSongNumber() {
-        System.out.printf("Enter the number of song you wan't to play : ");
+        System.out.printf("Enter the number of song you want to play : ");
     }
 
     public void showEnterSomethingValid() {
